@@ -6,5 +6,13 @@
 </template>
 
 <script>
-export default {}
+export default {
+  /*
+  data(){
+      return{
+        apikey: process.env.API_KEY,
+      }
+    }
+    */
+}
 </script>
