@@ -1,0 +1,24 @@
+.loginPage-tab .nav {
+  border-bottom: none;
+}
+.loginPage-tab .nav .nav-item .nav-link {
+  background-color: #2F4858;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  color: #fff;
+  font-weight: 700;
+}
+.loginPage-tab .nav .nav-item .active {
+  background-color: #3C6659;
+  border-bottom-color: #6688BA;
+  color: #fff;
+}
+.loginPage-tab-formGroup .--btnFocus:focus {
+  box-shadow: none !important;
+}
+.loginPage-tab-formGroup .formInput:focus {
+  box-shadow: none;
+}
+
+/*# sourceMappingURL=login.css.map */

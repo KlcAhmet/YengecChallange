@@ -1,0 +1,28 @@
+// variables
+$divTopMargin: 3em;
+
+.catImage {
+  &-center {
+    margin-top: $divTopMargin;
+    height: 30em;
+    @media only screen and (max-width: 400px) {
+      max-height: 20em;
+    }
+
+    &-image {
+      border-radius: 1.5em;
+    }
+  }
+
+  &-bottom {
+    .--rightMargin {
+      margin-right: 1em;
+    }
+
+    &-button {
+      &:focus {
+        box-shadow: none !important;
+      }
+    }
+  }
+}

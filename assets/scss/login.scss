@@ -1,0 +1,36 @@
+.loginPage-tab {
+  .nav {
+    border-bottom: none;
+
+    .nav-item {
+      .nav-link {
+        background-color: #2F4858;
+        border-top: none;
+        border-left: none;
+        border-right: none;
+        color: #fff;
+        font-weight: 700;
+      }
+
+      .active {
+        background-color: #3C6659;
+        border-bottom-color: #6688BA;
+        color: #fff;
+      }
+    }
+  }
+
+  &-formGroup {
+    .--btnFocus {
+      &:focus {
+        box-shadow: none !important;
+      }
+    }
+
+    .formInput {
+      &:focus {
+        box-shadow: none;
+      }
+    }
+  }
+}
