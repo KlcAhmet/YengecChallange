@@ -3,7 +3,13 @@
  1. Clone project `$ git clone {the url to the GitHub repo}`
  2.  `cd` into the project
  3. `$ npm install` for install dependencies
- 4. `$ npm start`
+ 4. Create .env file
+ 5. 
+
+> API = https://api.thecatapi.com  
+API_KEY = bd352b33-f03a-4b01-9fb6-6f6262e9eb09
+
+ 6. `$ npm start`
 
   
 
