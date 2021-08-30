@@ -12,23 +12,28 @@ export default {
       lang: 'en'
     },
     meta: [
-      { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' },
-      { name: 'format-detection', content: 'telephone=no' }
+      {charset: 'utf-8'},
+      {name: 'viewport', content: 'width=device-width, initial-scale=1'},
+      {hid: 'description', name: 'description', content: ''},
+      {name: 'format-detection', content: 'telephone=no'}
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      {rel: 'icon', type: 'image/x-icon', href: '/favicon.ico'}
     ]
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
-    'bootstrap/dist/css/bootstrap.min.css'
+    'bootstrap/dist/css/bootstrap.min.css',
+    'bootstrap/dist/js/bootstrap.min.js',
+    '@fortawesome/fontawesome-free/css/all.css',
+    '~/assets/scss/main.css',
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
+    '~/plugins/main',
+    '~/plugins/repositories.js'
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -45,12 +50,33 @@ export default {
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     '@nuxtjs/dotenv',
+    '@nuxtjs/axios',
+    '@nuxtjs/proxy',
   ],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
-  build: {
+  build: {},
+  publicRuntimeConfig: {
+    axios: {
+      browserBaseURL: 'http://localhost:3000'
+    }
   },
   privateRuntimeConfig: {
     API_KEY: process.env.API_KEY
-  }
+  },
+  axios: {
+    baseURL: 'https://api.thecatapi.com/v1/', // Used as fallback if no runtime config is provided
+    proxy: true,
+    credentials: true,
+    prefix: process.env.API_URL
+  },
+  proxy: {
+    '/v1/': {
+      target: 'https://api.thecatapi.com/v1',
+      pathRewrite: {
+        '^/search?api_key=' : '/..'
+      }
+    }
+  },
+
 }
